@@ -1,0 +1,148 @@
+
+
+:root {
+    --monk-orange: #8B4513;
+    --monk-gold: #D4AF37;
+    --monk-cream: #FDF5E6;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: image-set(url('../../../public/assets/images/oj.jpg'));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', system-ui, serif;
+    color: #4A3728;
+    margin: 0;
+    padding: 12px;
+}
+
+/* ===============================
+   MAIN CARD
+================================ */
+.monastery-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 15px auto;
+    background: var(--monk-cream);
+}
+
+/* ===============================
+   HEADER
+================================ */
+.monastery-header {
+    background: var(--monk-orange);
+    color: white;
+    padding: 24px 18px;
+    text-align: center;
+    border-bottom: 5px solid var(--monk-gold);
+}
+
+.monastery-header h2 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.monastery-header p {
+    font-size: 0.9rem;
+    margin-top: 6px;
+    opacity: 0.9;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn-gold {
+    background: var(--monk-gold);
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn-gold:hover {
+    background: #B8860B;
+    color: white;
+}
+
+/* ===============================
+   STATUS BADGE
+================================ */
+.status-badge {
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   RESULT BOX
+================================ */
+.result-box {
+    background: white;
+    border: 2px solid var(--monk-gold);
+    border-radius: 15px;
+    padding: 18px;
+    margin-top: 18px;
+}
+
+/* ===============================
+   TABLET & UP
+================================ */
+@media (min-width: 768px) {
+    body {
+        padding: 20px 30px;
+    }
+
+    .monastery-header {
+        padding: 32px;
+    }
+
+    .monastery-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .btn-gold {
+        width: auto;
+    }
+
+    .result-box {
+        padding: 25px;
+    }
+}
+
+/* ===============================
+   PRINT
+================================ */
+@media print {
+    body {
+        background: white;
+    }
+
+    .btn,
+    nav {
+        display: none !important;
+    }
+
+    .monastery-card {
+        box-shadow: none;
+    }
+}
+

@@ -1,0 +1,96 @@
+
+:root {
+    --monastery-maroon: #FF9933;
+    --monastery-gold: #D4AF37;
+    --parchment: #FDF5E6;
+}
+
+/* GLOBAL */
+body {
+    background-image: image-set(url('../../../public/assets/images/14.jpg'));
+    font-family: 'Pyidaungsu', 'Inter', sans-serif;
+    color: #3e2723;
+}
+
+/* PAGE HEADER */
+.page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--monastery-maroon);
+}
+
+/* FILTER BAR */
+.filter-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cat-btn {
+    background: white;
+    color: var(--monastery-maroon);
+    border: 2px solid var(--monastery-gold);
+    border-radius: 25px;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.cat-btn.active,
+.cat-btn:hover {
+    background: var(--monastery-maroon);
+    color: white;
+}
+
+/* ANNOUNCEMENT CARD */
+.announcement-card {
+    background: var(--parchment);
+    border-left: 6px solid var(--monastery-maroon);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    padding: 24px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.importance-high {
+    border-left-color: #c62828;
+    background: #fff5f5;
+}
+
+/* DATE BADGE */
+.date-badge {
+    background: var(--monastery-gold);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+/* CONTENT */
+.content-area {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.3rem;
+    }
+
+    .content-area {
+        font-size: 1rem;
+    }
+
+    .announcement-card {
+        padding: 18px;
+    }
+}
+
+.padding{
+    height: 50px;
+}

@@ -1,0 +1,194 @@
+
+:root {
+    --monk-brown: #c5a58e;
+    --monk-gold: #D4AF37;
+    --monk-saffron: #e97f16;
+    --monk-cream: #fdf8f0;
+    --ink-dark: #3a2f25;
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: image-set(url('../../../public/assets/images/11.jpg'));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: var(--ink-dark);
+    padding: 12px;
+    margin: 0;
+}
+
+.container {
+    margin: 15px auto;
+    padding: 0 10px;
+}
+
+/* ===============================
+   MAIN CARD
+================================ */
+.monastery-card {
+    padding: 0;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, .08);
+    overflow: hidden;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.monastery-header {
+    background: linear-gradient(135deg, var(--monk-brown), #4d2a12);
+    color: #fff;
+    padding: 28px 18px;
+    text-align: center;
+}
+
+.monastery-header h2 {
+    font-weight: 700;
+    letter-spacing: .5px;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.monastery-header p {
+    opacity: .9;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.content-area {
+    padding: 22px 18px;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn-monk {
+    background: var(--monk-brown);
+    color: #fff;
+    border-radius: 30px;
+    padding: 14px 36px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn-monk:hover {
+    background: #5b3116;
+    color: #fff;
+}
+
+/* ===============================
+   LEVEL / STATUS
+================================ */
+.level-pill {
+    border-radius: 16px;
+    padding: 16px;
+    background: var(--monk-cream);
+    border: 1px solid #e9dcc6;
+    margin-bottom: 18px;
+}
+
+.status-dot {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-on {
+    color: #2f7d32;
+}
+
+.status-off {
+    color: #9e9e9e;
+}
+
+/* ===============================
+   ROLL CARD
+================================ */
+.roll-card {
+    border: 2px dashed var(--monk-gold);
+    border-radius: 22px;
+    padding: 24px 18px;
+    background: #fffaf2;
+    text-align: center;
+}
+
+/* IMPORTANT: mobile-safe roll number */
+.roll-number {
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+    font-weight: 800;
+    color: var(--monk-brown);
+    letter-spacing: 2px;
+    word-break: break-all;
+}
+
+/* ===============================
+   TEXT HELPERS
+================================ */
+.divider {
+    border-top: 1px solid #e6d7bd;
+    margin: 18px 0;
+}
+
+.label {
+    color: #7a6652;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   TABLET & UP
+================================ */
+@media (min-width: 768px) {
+    body {
+        padding: 20px 30px 10px;
+    }
+
+    .content-area {
+        padding: 40px;
+    }
+
+    .monastery-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .btn-monk {
+        width: auto;
+    }
+}
+
+/* ===============================
+   PRINT
+================================ */
+@media print {
+    body {
+        background: white;
+    }
+
+    .btn,
+    nav {
+        display: none !important;
+    }
+
+    .monastery-card {
+        box-shadow: none;
+    }
+}
+

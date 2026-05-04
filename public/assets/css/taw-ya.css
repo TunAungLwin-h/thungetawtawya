@@ -1,0 +1,92 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefdf7;
+  margin: 0;
+  padding: 0;
+}
+
+.tawya-header {
+  background-color: #8b4513;
+  color: #fff3db;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.tawya-header h1 {
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.gallery {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 28px;
+  color: #5c2e00;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+.audio-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f5e5;
+}
+
+.audio-section h2 {
+  font-size: 26px;
+  color: #5c2e00;
+  margin-bottom: 20px;
+}
+
+.audio-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.audio-list li {
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio-list a {
+  background-color: #8b4513;
+  color: #fff3db;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.audio-list a:hover {
+  background-color: #a0522d;
+}

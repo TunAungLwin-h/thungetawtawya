@@ -1,0 +1,272 @@
+/* ===============================
+   GLOBAL STYLES
+================================ */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #fdfbf8 0%, #ede4d9 100%);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===============================
+   LANGUAGE SELECTOR
+================================ */
+.language-selector {
+  text-align: center;
+  padding: 15px 10px 5px;
+}
+
+.lang-btn {
+  background-color: #e9dbc5;
+  color: #5c2e00;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background-color: #8b4513;
+  color: #fff3db;
+}
+
+/* ===============================
+   LEVEL SELECTION SECTION
+================================ */
+.level-select {
+  text-align: center;
+  padding: 20px 12px;
+}
+
+.level-select h2 {
+  font-size: 20px;
+  color: #5c2e00;
+  margin-bottom: 6px;
+}
+
+.level-select .quote {
+  font-style: italic;
+  color: #7d5b3e;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+/* ===============================
+   LEVEL CARDS
+================================ */
+.level-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.level-card {
+  background-color: #fffef3;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.level-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 14px rgba(0,0,0,0.15);
+}
+
+.level-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.level-card h3 {
+  color: #8b4513;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.level-card p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* ===============================
+   LEVEL BUTTON
+================================ */
+.btn-level {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #8b4513;
+  color: #fff3db;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn-level:hover {
+  background-color: #a0522d;
+}
+
+/* ===============================
+   FORM CONTAINER
+================================ */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 25px 15px;
+}
+
+.registration-form {
+  width: 100%;
+  max-width: 480px;
+  display: none;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.registration-form.active {
+  display: block;
+}
+
+.registration-form h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #5c2e00;
+  font-size: 18px;
+}
+
+/* ===============================
+   FORM FIELDS
+================================ */
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #5c2e00;
+  font-size: 13px;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc1a3;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fefaf3;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ===============================
+   FORM ACTIONS
+================================ */
+.form-actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+button[type="submit"] {
+  padding: 8px 20px;
+  background-color: #8b4513;
+  color: #fff3db;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #a0522d;
+}
+
+/* ===============================
+   FORM REVIEW
+================================ */
+.form-review {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  color: #5c2e00;
+}
+
+.form-review h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.form-review ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.form-review li {
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 6px;
+}
+
+/* ===============================
+   BACK LINK
+================================ */
+.back-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #8b4513;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   RESPONSIVE (MOBILE)
+================================ */
+@media screen and (max-width: 600px) {
+  .level-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .level-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+}

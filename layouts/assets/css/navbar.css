@@ -1,0 +1,216 @@
+
+:root {
+    --monk-maroon: #4d1301;
+    --monk-gold: #D4AF37;
+    --monk-cream: #FDFBF7;
+    --monk-white: #ffffff;
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===============================
+   DESKTOP NAVBAR BASE
+================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(253, 251, 247, 0.98); /* var(--monk-cream) with slight transparency */
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid var(--monk-gold); /* Religious accent line */
+}
+
+.navbar-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* BRANDING */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: 2px solid var(--monk-gold);
+    object-fit: cover;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    color: var(--monk-gold);
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+
+.sub-title {
+    font-size: 0.7rem;
+    color: var(--monk-gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+}
+
+/* DESKTOP MENU */
+.nav-menu {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--monk-maroon);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hide icons on desktop for a cleaner look if preferred */
+.nav-item i {
+    display: none; 
+}
+
+.nav-item:hover {
+    color: var(--monk-gold);
+}
+
+.login-btn {
+    background: var(--monk-maroon);
+    color: var(--monk-gold) !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid var(--monk-gold);
+}
+
+.login-btn:hover {
+    background: #3E2723;
+    transform: translateY(-2px);
+}
+
+/* MOBILE TOGGLE */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--monk-maroon);
+    cursor: pointer;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE UI (DRAWER)
+================================ */
+@media (max-width: 992px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    /* Hide text labels in brand for small phones */
+    @media (max-width: 480px) {
+        .brand-text { display: none; }
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Drawer hidden to the right */
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
+        background: var(--monk-cream);
+        flex-direction: column;
+        align-items: flex-start; /* Left align text */
+        justify-content: flex-start;
+        padding: 0; /* Header handles padding */
+        box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        transition: var(--transition);
+        z-index: 2000;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    /* Mobile Menu Header (Maroon Style) */
+    .mobile-menu-header {
+        width: 100%;
+        background: var(--monk-maroon);
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--monk-gold);
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .close-icon {
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    /* Mobile Menu Items */
+    .nav-item {
+        width: 100%;
+        padding: 20px 25px;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Space for icons */
+    }
+
+    .nav-item i {
+        display: block; /* Show icons on mobile for better touch UI */
+        width: 25px;
+        color: var(--monk-gold);
+        font-size: 1.2rem;
+    }
+
+    .nav-item:hover {
+        background: rgba(212, 175, 55, 0.1);
+        padding-left: 35px; /* Soft slide effect on hover */
+    }
+
+    /* Admin Button on Mobile */
+    .mobile-admin-wrapper {
+        width: 100%;
+        padding: 30px 25px;
+        margin-top: auto; /* Pushes button to the bottom of the drawer */
+    }
+
+    .login-btn {
+        width: 100%;
+        text-align: center;
+        padding: 16px;
+        display: block;
+    }
+}

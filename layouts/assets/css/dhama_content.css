@@ -1,0 +1,429 @@
+
+    :root {
+        --monastery-cream: #f8f4ec;
+        --monastery-deep: #4a3320;
+        --monastery-gold: #c9a227;
+        --monastery-gold-soft: #e8d5a3;
+        --monastery-brown: #6b4e3d;
+        --monastery-border: #d4c4a8;
+        --monastery-shadow: rgba(74, 51, 32, 0.12);
+        --focus-bg: #1a1612;
+        --focus-panel: #252019;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--monastery-cream);
+        color: var(--monastery-deep);
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+
+    body.focus-mode {
+        background: var(--focus-bg);
+        color: #e8e0d4;
+    }
+
+    /* ----- Nav bar (copy this into your main navbar) ----- */
+    .dharma-nav-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--monastery-deep);
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid var(--monastery-border);
+        background: rgba(255, 255, 255, 0.6);
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .dharma-nav-item i {
+        color: var(--monastery-gold);
+    }
+
+    .dharma-nav-item:hover {
+        background: var(--monastery-gold-soft);
+        border-color: var(--monastery-gold);
+        color: var(--monastery-deep);
+    }
+
+    /* ----- Page header ----- */
+    .stream-header {
+        background: linear-gradient(135deg, var(--monastery-deep) 0%, #5c4033 100%);
+        color: #f5f0e8;
+        padding: clamp(12px, 3vw, 20px) 16px;
+        text-align: center;
+        border-bottom: 3px solid var(--monastery-gold);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .stream-header h1 {
+        font-family: 'Crimson Pro', serif;
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .stream-header h1 i {
+        color: var(--monastery-gold-soft);
+    }
+
+    .stream-header p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-top: 4px;
+    }
+
+    .header-actions {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .header-actions button,
+    .header-actions a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        color: #f5f0e8;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.2s, border-color 0.2s;
+    }
+
+    .header-actions button:hover,
+    .header-actions a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: var(--monastery-gold);
+    }
+
+    /* ----- Main layout ----- */
+    .stream-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 16px;
+    }
+
+    @media (min-width: 900px) {
+        .stream-main {
+            grid-template-columns: 1fr 340px;
+        }
+    }
+
+    body.focus-mode .stream-main {
+        grid-template-columns: 1fr;
+    }
+
+    body.focus-mode .playlist-panel {
+        display: none !important;
+    }
+
+    /* ----- Video player area ----- */
+    .player-wrap {
+        position: relative;
+        background: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px var(--monastery-shadow);
+        border: 1px solid var(--monastery-border);
+    }
+
+    .player-wrap .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .player-wrap .embed-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .video-info {
+        padding: 14px 16px;
+        background: linear-gradient(to bottom, #fffef9, #faf6ef);
+        border-top: 1px solid var(--monastery-border);
+    }
+
+    body.focus-mode .video-info {
+        background: var(--focus-panel);
+        border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .video-info h2 {
+        font-family: 'Crimson Pro', serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--monastery-deep);
+        margin-bottom: 6px;
+    }
+
+    body.focus-mode .video-info h2 {
+        color: #e8e0d4;
+    }
+
+    .video-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.85rem;
+        color: var(--monastery-brown);
+    }
+
+    body.focus-mode .video-meta {
+        color: #a89888;
+    }
+
+    .video-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    /* Captions area (admin can add captions/notes) */
+    .captions-wrap {
+        margin-top: 12px;
+        padding: 12px;
+        background: rgba(201, 162, 39, 0.08);
+        border-radius: 10px;
+        border-left: 4px solid var(--monastery-gold);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    body.focus-mode .captions-wrap {
+        background: rgba(201, 162, 39, 0.12);
+        border-left-color: var(--monastery-gold-soft);
+    }
+
+    .captions-wrap.empty {
+        display: none;
+    }
+
+    /* ----- Playlist / queue panel ----- */
+    .playlist-panel {
+        background: #fffef9;
+        border-radius: 12px;
+        border: 1px solid var(--monastery-border);
+        overflow: hidden;
+        box-shadow: 0 8px 24px var(--monastery-shadow);
+        display: flex;
+        flex-direction: column;
+        max-height: 85vh;
+    }
+
+    body.focus-mode .playlist-panel {
+        max-height: none;
+    }
+
+    .playlist-panel h3 {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--monastery-deep);
+        background: linear-gradient(to bottom, var(--monastery-gold-soft), #e5d9b8);
+        border-bottom: 1px solid var(--monastery-border);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .playlist-list {
+        overflow-y: auto;
+        flex: 1;
+        min-height: 200px;
+    }
+
+    .playlist-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 14px;
+        border-bottom: 1px solid rgba(212, 196, 168, 0.5);
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+
+    .playlist-item:hover {
+        background: rgba(201, 162, 39, 0.08);
+    }
+
+    .playlist-item.active {
+        background: rgba(201, 162, 39, 0.15);
+        border-left: 3px solid var(--monastery-gold);
+    }
+
+    .playlist-item .thumb {
+        width: 120px;
+        min-width: 120px;
+        aspect-ratio: 16/9;
+        background: #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .playlist-item .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .playlist-item .text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .playlist-item .text .title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--monastery-deep);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .playlist-item .text .meta {
+        font-size: 0.78rem;
+        color: var(--monastery-brown);
+        margin-top: 2px;
+    }
+
+    @media (max-width: 899px) {
+        .playlist-item .thumb {
+            width: 100px;
+            min-width: 100px;
+        }
+    }
+
+    /* ----- Categories / filters ----- */
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .filters button {
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--monastery-border);
+        background: #fff;
+        color: var(--monastery-deep);
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .filters button:hover,
+    .filters button.active {
+        background: var(--monastery-gold-soft);
+        border-color: var(--monastery-gold);
+        color: var(--monastery-deep);
+    }
+
+    /* ----- Admin strip (only show if admin) ----- */
+    .admin-strip {
+        display: none;
+        background: var(--monastery-deep);
+        color: #f5f0e8;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .admin-strip.show {
+        display: flex;
+    }
+
+    .admin-strip a,
+    .admin-strip button {
+        color: var(--monastery-gold-soft);
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: inherit;
+    }
+
+    /* ----- Focus mode fullscreen feel ----- */
+    .focus-toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+    }
+
+    .focus-toggle:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* ----- Mobile tweaks ----- */
+    @media (max-width: 600px) {
+        .stream-header h1 {
+            font-size: 1.15rem;
+        }
+
+        .player-wrap {
+            border-radius: 0;
+        }
+
+        .stream-main {
+            padding: 12px;
+        }
+
+        .video-info {
+            padding: 12px;
+        }
+
+        .playlist-item {
+            padding: 8px 12px;
+        }
+    }
+   

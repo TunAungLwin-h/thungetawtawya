@@ -1,0 +1,11 @@
+.git
+.gitignore
+.DS_Store
+Thumbs.db
+
+public/assets/mysql-8.4/
+
+test.php
+test_2.php
+thungwetaw_db.sql
+thungwetaw_db (6).sql
