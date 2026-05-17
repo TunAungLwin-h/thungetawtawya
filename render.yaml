@@ -5,8 +5,10 @@ services:
     plan: free
     dockerfilePath: ./Dockerfile
     autoDeploy: true
-    healthCheckPath: /
+    healthCheckPath: /health.php
     envVars:
+      - key: PORT
+        value: "80"
       - key: DB_HOST
         sync: false
       - key: DB_PORT

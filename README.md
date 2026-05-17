@@ -30,20 +30,24 @@ This repo includes:
 
 - `Dockerfile` for Apache + PHP 8.2
 - `render.yaml` for a Render web service blueprint
+- `health.php` for Render HTTP health checks that do not require a database connection
 
 ### Recommended setup
 
 1. Push this repo to GitHub.
-2. In Render, create a new Blueprint or Web Service from the repo.
-3. Use the included `Dockerfile`.
-4. Set the environment variables:
+2. In Render, create a new Blueprint from the repo. Render will read `render.yaml`.
+3. Confirm the service uses Docker and the included `Dockerfile`.
+4. Set the required environment variables in Render:
    - `DB_HOST`
    - `DB_PORT`
    - `DB_NAME`
    - `DB_USER`
    - `DB_PASS`
-5. Use a MySQL database and import the SQL dump.
+5. Use a MySQL-compatible database and import `mysql_database/thungwetaw_db (8).sql`.
+6. Deploy the service.
 
 ### Important note
 
-This app currently uses MySQL via PDO, so your Render web service should connect to MySQL. You can run MySQL on Render or use another MySQL provider, then copy those credentials into the Render environment variables.
+This app currently uses MySQL via PDO. Render's managed database offering is PostgreSQL, so either use an external MySQL-compatible provider and copy its credentials into the Render environment variables, or plan a separate migration from MySQL to PostgreSQL.
+
+The Docker service listens on port `80`, so `render.yaml` sets `PORT=80`. The health check path is `/health.php` so deploy health checks can pass even before the MySQL database is fully imported.
